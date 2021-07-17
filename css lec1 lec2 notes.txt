@@ -1,0 +1,275 @@
+// slecting a tag
+p {
+	color: blue;
+}
+<p> loren epsum </p>
+
+//selecting multiple tags
+p,a {
+	color: blue;
+}
+<p> loren epsum <a href='#'>new link</a></p>
+
+//to check default behaviour open inspect page element
+
+//class selector-there can be many elemensts with same class
+//class can be of different element
+.classname {
+	color: blue;
+	font-weight: bold;
+}
+<p class=='classname'> loren epsum </p>
+
+//selecting class for specific element
+p.classname, li.classname {
+	color: blue;
+}
+<p class=='classname'> loren epsum </p>
+<a href='#' class='classname'> this is another class link</a>
+<li class='classname'> something list </li>
+
+
+//decendent c ombinator selector
+//selecting one element within another
+li em {
+	color: blue;
+}
+<li> tag within tag <em> this iis the within tag</em></li>
+
+//sibling or adjacent tag
+//changes the adjacent tag i.e p tag in this case
+h1+ p {
+	color: blue;
+	font-size:200%;
+}
+<h1> this is h1 tag</h1>
+<p class=='classname'> loren epsum </p>
+//wont work here coz no adjacent tags here
+h1+ p {
+	color: blue;
+	font-size:200%;
+}
+<h1> this is h1 tag</h1>
+<span>Hello</span>
+<p class=='classname'> loren epsum </p>
+
+
+//pseudoclass selector
+//this will change the action of the element for hover action
+a:hover {
+	color: blue;
+text-decoration:none
+}
+<a href='#' class='classname'> this is another class link</a>
+
+
+//using all selectors together
+//this will select classname inside span inside p inside body tag
+body h1+p .classname {
+	color: blue;
+	padding : 5px
+}
+<body>
+<h1> this is h1 tag</h1>
+<p>this ia a pragraph <span class=='classname'> loren epsum </span></p>
+</body>
+
+
+//selecting id
+#idname{
+	color: blue;
+	padding : 5px
+}
+<p id='idname'> loren epsum </p>
+
+
+//selecting id
+p#idname{
+	color: blue;
+	padding : 5px
+}
+<p id='idname'> loren epsum </p>
+
+//selects attribute
+//changes all the class
+li[class]{
+	color: blue;
+	padding : 5px
+}
+<li> list 1</li>
+<li class='a'> list 2</li>
+<li class='ab'> list 3</li>
+<li class='ac'> list 4</li>
+
+//selects attribute
+//changes all the class='a'
+li[class='a']{
+	color: blue;
+	padding : 5px
+}
+<li> list 1</li>
+<li class='a'> list 2</li>
+<li class='ab'> list 3</li>
+<li class='ac'> list 4</li>
+
+
+//selects attribute
+//changes all the class not 'a' i.e class ab anad ac
+li[class~='a']{
+	color: blue;
+	padding : 5px
+}
+<li> list 1</li>
+<li class='a'> list 2</li>
+<li class='ab'> list 3</li>
+<li class='ac'> list 4</li>
+<li class='a c'> list 4</li>
+
+
+//everything selecter *
+//selects everything
+*{
+	color: blue;
+	padding : 5px
+}
+<li> list 1</li>
+<li class='a'> list 2</li>
+<li class='ab'> list 3</li>
+<li class='ac'> list 4</li>
+<li class='a c'> list 4</li>
+
+
+*****************************************************
+CSS PROPERTIES
+
+border-width:1px;
+border-style:solid;
+border-color:#000;
+#shorthand peroperty
+border: 1px solic #000;
+
+margin-top: 10px
+margin-right:5px
+margin-bottom:10px
+margin-left:5px
+#shorthand property
+margin: 10px 5px 10px 5px;
+
+
+color: blue;
+backgorund-color:blue;
+border-color :blue;
+backgorund-image:
+backgorund-repeat: //bg image repititiion
+backgorund-position: //
+#shorthand property
+
+background: #000 url(img.gif) no-repeat left top
+background-size: //bgimage size
+background-attachment: //bg image fixed or scrolable
+
+
+font-style: italic;
+font-weight: 100  //100-900 value 400 normal 700 bold
+font-size: smaller // size of fonts value in percent keyword pixel
+line-height: 1.2
+font-family: normal; //font types
+#shorthand property
+font: italic bold .8em/1.2 Arial, sans-serif
+
+to link external font
+-select font from google
+-link it in meta before style tag
+-write the name of the font in the font-family tag
+
+text-color: 
+text-align: //center left right justify
+text-decoration: //overline, underline, line-through, underline overline
+text-transform: //capitalize uppercase lowercase none full-width
+text-indent: //space to start from 
+letter-spacing: //space between each letter
+word-space: //space between each word
+line-height: 
+text-shadow: 1px 1px 2px black //to give 3d effect to text offset-x offset-y blur radius color
+
+
+140 type of color names (depends on browser support
+RGB color (0-255) and opacity
+hex code color (#RRGGBB intensity between 0-255)
+
+
+<script>
+p {
+	color: blue;
+}
+h1 {
+	color: #ffffff;
+}
+h2 {
+	color: #ffffffeb; //rr gg bb opacity
+}
+h3 {
+	color: rgb(0,0,0)
+	color: rgba(0,0,0,0)}
+</script>
+<h1> this is a heading</h1>
+<h2> this is a heading</h2>
+<h3> this is a heading</h3>
+<p> this is a paragraph </p>
+
+
+
+<script>
+p {
+	color: blue;
+	font-family: normal;  
+	font-size: 50px;
+	font-weight: 100;
+	
+
+}
+h1 {
+	background-color: #ffffff;
+	background-color: #ffffff;
+	font-family: 'Arial Narrow', 'Arial'; //if computer doesnot get 1 font it will check for other font availability
+}
+.background {
+	background-image:url("imagelocation.jpg");
+	height: 1000px;
+	width: 1000px;
+	background-repeat: no-repeat;
+	background-size: 400px;
+	background-attachment: fixed //or scroll 
+	background-position: center //top,left,right positioning of image
+}
+ h2 {
+	color: #ffffffeb; //rr gg bb opacity
+}
+h3 {
+	color: rgb(0,0,0)
+	color: rgba(0,0,0,0)}
+</script>
+<div class='background'>
+	<h1> this is a heading</h1>
+</div>
+<h2> this is a heading</h2>
+<h3> this is a heading</h3>
+<p> this is a paragraph </p>
+
+
+
+<script>
+p {
+	text-color: red;
+	line-height: 1.5;
+	text-indent: 100px;
+	word-space: 1.5;
+	text-transform: uppercase;
+	text-decoration: underline overline
+	text-shadow: 3px 3px 2px black,
+	1px 1px 2px black; 
+	text-align: center ;
+	letter-spacing: 
+	
+}
+<p> this is a paragraph </p>
